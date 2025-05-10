@@ -1,7 +1,6 @@
 import "./style.css";
 import ReactDOM from "react-dom/client";
-import * as THREE from "three";
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 
-root.render();
+root.render(<>Soon to be a badass R3F application</>);
