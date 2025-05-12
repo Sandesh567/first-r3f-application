@@ -1,7 +1,14 @@
 import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
 export default function Experience() {
-  useFrame(() => {});
+  const cubeRef = useRef();
+  //We can access the mesh with cuberef.current and update
+  //it in the useFrame increment its rotation.y property in the useFrame
+
+  useFrame((state, delta) => {
+    cubeRef.current.rotation.y += delta;
+  });
 
   return (
     <>
@@ -10,8 +17,13 @@ export default function Experience() {
         <sphereGeometry />
         <meshBasicMaterial color="orange" />
       </mesh>
-      <mesh rotation-y={[Math.PI * 0.25]} position-x={2} scale={1.5}>
-        {/* <sphereGeometry args={[1.5, 32, 32]} /> */}
+      {/* Associating the useRef */}
+      <mesh
+        ref={cubeRef}
+        rotation-y={[Math.PI * 0.25]}
+        position-x={2}
+        scale={1.5}
+      >
         <boxGeometry />
         <meshBasicMaterial color="purple" wireframe="false" />
       </mesh>
@@ -22,5 +34,3 @@ export default function Experience() {
     </>
   );
 }
-
-// Using useFrame hook provided by R3F for animating scene.
