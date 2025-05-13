@@ -1,10 +1,12 @@
-import { useFrame, extend } from "@react-three/fiber";
+import { useThree, useFrame, extend } from "@react-three/fiber";
 import { useRef } from "react";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 extend({ OrbitControls });
 
 export default function Experience() {
+  const { camera, gl } = useThree();
+
   const cubeRef = useRef();
   //We can access the mesh with cuberef.current and update
   //it in the useFrame increment its rotation.y property in the useFrame
@@ -17,11 +19,14 @@ export default function Experience() {
 
   return (
     <>
+      <orbitControls args={[camera, gl.domElement]} />
+      //lights
+      <directionalLight position={[1, 2, 3]} intensity={1.5} />
       <group ref={groupRef}>
         {/* Creating Scenes */}
         <mesh position-x={-2}>
           <sphereGeometry />
-          <meshBasicMaterial color="orange" />
+          <meshStandardMaterial color="orange" wireframe="true" />
         </mesh>
         {/* Associating the useRef */}
         <mesh
@@ -31,12 +36,12 @@ export default function Experience() {
           scale={1.5}
         >
           <boxGeometry />
-          <meshBasicMaterial color="purple" wireframe="false" />
+          <meshStandardMaterial color="purple" wireframe="false" />
         </mesh>
       </group>
       <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>
         <planeGeometry />
-        <meshBasicMaterial color="green" />
+        <meshStandardMaterial color="green" />
       </mesh>
     </>
   );

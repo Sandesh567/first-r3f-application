@@ -39,3 +39,10 @@ import {useRef}
 
 //Importing extend 
 Extend helps in creating new declarative elements in r3f
+
+//Importing useThree
+  const { camera, gl } = useThree();
+
+//controlling the whole scene
+
+      <orbitControls args={[camera, gl.domElement]} />
