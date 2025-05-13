@@ -22,6 +22,7 @@ export default function Experience() {
       <orbitControls args={[camera, gl.domElement]} />
       //lights
       <directionalLight position={[1, 2, 3]} intensity={1.5} />
+      <ambientLight intensity={0.5} />
       <group ref={groupRef}>
         {/* Creating Scenes */}
         <mesh position-x={-2}>
