@@ -27,3 +27,12 @@ import {useRef}
         position-x={2}
         scale={1.5}
       >
+
+//Grouping the mesh and using the useRef on Grouping
+
+    groupRef.current.rotation.y += delta;
+
+<group>
+  <mesh>
+  </mesh>
+</group>
