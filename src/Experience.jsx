@@ -1,5 +1,8 @@
-import { useFrame } from "@react-three/fiber";
+import { useFrame, extend } from "@react-three/fiber";
 import { useRef } from "react";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+
+extend({ OrbitControls });
 
 export default function Experience() {
   const cubeRef = useRef();

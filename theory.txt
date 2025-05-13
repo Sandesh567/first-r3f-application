@@ -36,3 +36,6 @@ import {useRef}
   <mesh>
   </mesh>
 </group>
+
+//Importing extend 
+Extend helps in creating new declarative elements in r3f
