@@ -1,12 +1,12 @@
 import { useThree, useFrame, extend } from "@react-three/fiber";
 import { useRef } from "react";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import CustomObject from "./CustomObject.jsx";
 
 extend({ OrbitControls });
 
 export default function Experience() {
   const { camera, gl } = useThree();
-
   const cubeRef = useRef();
   //We can access the mesh with cuberef.current and update
   //it in the useFrame increment its rotation.y property in the useFrame
@@ -27,7 +27,7 @@ export default function Experience() {
         {/* Creating Scenes */}
         <mesh position-x={-2}>
           <sphereGeometry />
-          <meshStandardMaterial color="orange" wireframe="true" />
+          <meshStandardMaterial color="orange" wireframe="false" />
         </mesh>
         {/* Associating the useRef */}
         <mesh
@@ -44,6 +44,8 @@ export default function Experience() {
         <planeGeometry />
         <meshStandardMaterial color="green" />
       </mesh>
+      {/* //Creating custom CustomObject */}
+      <CustomObject />
     </>
   );
 }
