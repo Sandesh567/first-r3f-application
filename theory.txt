@@ -53,4 +53,11 @@ Extend helps in creating new declarative elements in r3f
       <directionalLight position={[1, 2, 3]} intensity={1.5} />
       <ambientLight intensity={0.5} />
 
-//Creating custom geometry
+//Wireframing the material
+<meshStandardMaterial color="purple" wireframe="false" />
+
+//useMemo 
+using use memo to store to value to prevent from re-render the component that do not
+change. useMemo is a react hook to which we send a function. it'll call that function 
+remember the value. If the component is being redrawn, useMemo will return the value
+it already got from the first function call (like a cache)

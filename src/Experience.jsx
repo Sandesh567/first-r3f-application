@@ -42,7 +42,7 @@ export default function Experience() {
       </group>
       <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>
         <planeGeometry />
-        <meshStandardMaterial color="green" />
+        <meshStandardMaterial color="blue" />
       </mesh>
       {/* //Creating custom CustomObject */}
       <CustomObject />
