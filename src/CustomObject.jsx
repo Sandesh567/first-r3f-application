@@ -1,9 +1,8 @@
 import * as THREE from "three";
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 export default function CustomObject() {
   const geometryRef = useRef();
-  geometryRef.current.computeVertexNormals();
 
   const verticesCount = 10 * 3;
 
@@ -13,6 +12,10 @@ export default function CustomObject() {
       positions[i] = (Math.random() - 0.5) * 3;
 
     return positions;
+  }, []);
+
+  useEffect(() => {
+    geometryRef.current.computeVertexNormals();
   }, []);
 
   return (
