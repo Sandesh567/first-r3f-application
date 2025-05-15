@@ -61,3 +61,15 @@ using use memo to store to value to prevent from re-render the component that do
 change. useMemo is a react hook to which we send a function. it'll call that function 
 remember the value. If the component is being redrawn, useMemo will return the value
 it already got from the first function call (like a cache)
+
+//tweaking camera from index canvas
+ <Canvas
+    camera={{
+      fov: 45,
+      near: 0.1,
+      far: 200,
+      position: [3, 2, 6],
+    }}
+  >
+    <Experience />
+  </Canvas>
