@@ -9,6 +9,9 @@ const root = ReactDOM.createRoot(document.querySelector("#root"));
 root.render(
   <Canvas
     // orthographic
+    gl={{
+      antialias: true,
+    }}
     camera={{
       fov: 45,
       // zoom: 100,
